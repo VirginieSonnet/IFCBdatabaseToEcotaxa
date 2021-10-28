@@ -1,7 +1,3 @@
----
-output: github_document
----
-
 <!-- README.md is generated from README.Rmd. -->
 
 # IFCB data formatting for EcoTaxa <img src="figures/IFCB_Rowan+EcoTaxa.JPG" align="right" height="185.5"/>
