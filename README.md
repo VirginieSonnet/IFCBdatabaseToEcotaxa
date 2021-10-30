@@ -1,8 +1,10 @@
----
-output: github_document
----
-
 <!-- README.md is generated from README.Rmd. -->
+
+<style>
+body {
+font-family: "LM Roman";
+text-align: justify}
+</style>
 
 # IFCB data formatting for EcoTaxa <img src="figures/IFCB_Rowan+EcoTaxa.JPG" align="right" height="185.5"/>
 
@@ -86,13 +88,13 @@ You can use the headers included in the data folder that corresponds to EcoTaxa'
 
 Basically you will need:
 
-* **image file name** (required)
-* **image metadata** (optional): id, link, lat, lon, date, time, depth_min, depth_max
-* **annotation metadata** (optional): status (one of "validated" or "predicted"), person name (needs to have a profile on EcoTaxa), person email, date, time, category, hierarchy (optional)
-* **instrument metadata** (optional): id, instrument, resolution (pixels per micron)
-* **sample metadata** (optional): id, source, flag, cruise, vessel, reference, station, cast, source id, culture species, concentration
-* **image features** (optional): all of the features calculated during data processing
-* **processing metadata** (optional): id, software, script and script version, library and library version, date and time
+-   **image file name** *(required)*
+-   **image metadata** *(optional)*: id, link, lat, lon, date, time, depth_min, depth_max
+-   **annotation metadata** *(optional)*: status (one of "validated" or "predicted"), person name (needs to have a profile on EcoTaxa), person email, date, time, category, hierarchy (optional)
+-   **instrument metadata** *(optional)*: id, instrument, resolution (pixels per micron)
+-   **sample metadata** *(optional)*: id, source, flag, cruise, vessel, reference, station, cast, source id, culture species, concentration
+-   **image features** *(optional)*: all of the features calculated during data processing
+-   **processing metadata** *(optional)*: id, software, script and script version, library and library version, date and time
 
 1.  Query the information needed from the database
 2.  Create, rename and reorder the columns to match the EcoTaxa column names
@@ -105,4 +107,6 @@ If the file is small enough (\< 100MB) you can import it directly in EcoTaxa sel
 
 If your file is bigger, upload your data on their server in the folder corresponding to your group and, within your project, import it via *Project \> Import images and metadata \>* *Choose a folder or zip file on the server*.Don't forget to erase your file from the server once imported!
 
-<ins>Credits</ins>composite image created by Rowan Cirivello
+<ins>
+
+Credits</ins>composite image created by Rowan Cirivello
