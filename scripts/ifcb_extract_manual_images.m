@@ -7,8 +7,8 @@
 
 %% Set-up your database connection 
 
-DBC = db_connect(db='ifcb_mouw2',server='phytoplankton.upmc.edu',user='virginie', pswd='Restmonami');
-DBC = db_connect(db='ifcb_mouw2',server='phyto-optics.gso.uri.edu',user='virginie', pswd='SummerAtTheBeach');
+% update with your connection settings: database name, host, username, password 
+DBC = db_connect('ifcb_mouw2','phytoplankton.upmc.edu','virginie', 'Restmonami');
 
 %% Query your rois 
 
@@ -20,20 +20,24 @@ close(result)
 clear query result
 
 % OPTION 2: extract images from a specific class with its id (here 65)
-% query=['SELECT roi.id,auto_class.class_id FROM roi JOIN auto_class on auto_class.roi_id=roi.id WHERE auto_class.class_id=65'];
-% result=fetch(exec(DBC,query));
-% roi=result.Data;
-% close(result)
-% clear query result
+query=['SELECT roi.id,auto_class.class_id FROM roi JOIN auto_class on auto_class.roi_id=roi.id WHERE auto_class.class_id=65'];
+result=fetch(exec(DBC,query));
+roi=result.Data;
+close(result)
+clear query result
 
 %% Export to a specific folder 
 
 % OPTION 1: extract all images to the same folder 
-% indicate the path where you want to store the images 
-ifcb_extract_images(DBC, roi.id,'/../data/manual_images/');
+% update the path where you want to store the images 
+% if you try to export too many images at once, you might want to create a
+% loop to not time out the connection to your database (and also know where
+% you are at if you add a disp command!)
+ifcb_extract_images(DBC, roi.id,'/Volumes/Desktop/IFCBdatabaseToEcotaxa/data/manual_images');
 
 
 % OPTION 2: extract 100 random images from each class to a different folder
+% update the path where you want to store the images 
 [u,~,b]=unique(roi.class_id);
 for uu=1:length(u)
     query=['SELECT classes.class FROM classes WHERE id=' num2str(u(uu))];
@@ -52,15 +56,11 @@ for uu=1:length(u)
     end
     
     ifcb_extract_images(roi.id(ind),fullfile(paths.manual,'extracted_images',c));
-    try
-        ifcb_extract_images(roi.id(ind),'/Users/audrey/Desktop/class_bad/');
-    catch
-        continue;
-    end
 end
 
 
 % OPTION 3: extract 100 random images from the selected class 
+% update the path where you want to store the images 
 [u,a,b]=unique(roi.class_id);
 query=['SELECT classes.class FROM classes WHERE id=' num2str(u(1))];
 result=fetch(exec(DBC,query));

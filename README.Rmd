@@ -8,7 +8,7 @@ output: github_document
 
 <!-- badges: start -->
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT) [![R 4.1.1](https://img.shields.io/badge/R-4.1.1-red.svg)](https://www.r-project.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT) [![R 4.1.1](https://img.shields.io/badge/R-4.1.1-red.svg)](https://www.r-project.org/) [![MATLAB 2021b](https://img.shields.io/badge/MATLAB-2021b-blue.svg)](https://www.mathworks.com/products/matlab.html)
 
 <!-- badges: end -->
 
@@ -48,7 +48,7 @@ For reference, the database designed by Audrey Ciochetto for the Mouw lab look l
 
 You can either clone this repository or download the scripts that are of interest for you.
 
-```{bash}
+```{bash, eval=FALSE}
 git clone https://github.com/VirginieSonnet/IFCBdatabaseToEcotaxa.git
 ```
 
@@ -93,4 +93,4 @@ If the file is small enough (\< 100MB) you can import it directly in EcoTaxa sel
 
 If your file is bigger, upload your data on their server in the folder corresponding to your group and, within your project, import it via *Project \> Import images and metadata \>* *Choose a folder or zip file on the server*.Don't forget to erase your file from the server once imported!
 
-<ins> Credit</ins>: composite image created by Rowan Cirivello.
+<ins>Credits</ins>composite image created by Rowan Cirivello
