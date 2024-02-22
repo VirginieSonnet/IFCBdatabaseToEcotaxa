@@ -26,9 +26,9 @@ library(lubridate) # date manipulation
 
 # 1. Database connection -----------------------------------------------------
 
-Sys.setenv(MYSQL_PWD_VIRGINIE="SummerAtTheBeach") 
-db <- dbConnect(MySQL(),dbname="ifcb_mouw2", host="phyto-optics.gso.uri.edu", 
-                port=3306, user="virginie", password=Sys.getenv("MYSQL_PWD_VIRGINIE"))
+Sys.setenv(MYSQL_PWD_VIRGINIE="pwd") 
+db <- dbConnect(MySQL(),dbname="ifcb_mouw2", host="host.data.uri.edu", 
+                port=3306, user="user", password=Sys.getenv("MYSQL_PWD_VIRGINIE"))
 
 
 # 2. Query  ------------------------------------------------------------------
